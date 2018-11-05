@@ -15,8 +15,6 @@ TEST(Sample, Sample)
   inf >> numberOfTestCases;
   for (int i = 0; i < numberOfTestCases; i++)
   {
-    int seqSize;
-    inf >> seqSize;
     int lhs, rhs;
     inf >> lhs >> rhs;
     int expectedAnswer;
