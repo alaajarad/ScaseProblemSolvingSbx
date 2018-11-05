@@ -1,0 +1,57 @@
+// gtest
+#include "gtest/gtest.h"
+
+// stdlib
+#include <cstdint>
+#include <random>
+
+namespace
+{
+  std::seed_seq &GetSeed()
+  {
+    static uint32_t const data[]
+    {
+      0x75988dd9, 0x0eb556c9, 0x27e566f5, 0x878d3c4c
+    , 0xe22fb74a, 0x8ef3e6c8, 0x74936822, 0xf2d6e0e3
+    , 0xd0f794c1, 0x6a47b2af, 0xe417b4a2, 0xd612c718
+    , 0x13b85406, 0xa07f29d7, 0xa8f59002, 0x1d8040bc
+    };
+    static std::seed_seq seq(std::begin(data), std::end(data));
+    return seq;
+  }
+
+  static std::mt19937 rng{GetSeed()};
+}
+
+#include "@TESTFILE@"
+
+#include <csignal>
+#include <cstdlib>
+#include <iostream>
+#include <stdexcept>
+
+void signal_handler(int) 
+{
+  std::exit(EXIT_FAILURE);
+}
+
+int main(int argc, char *argv[])
+try
+{
+  if(SIG_ERR == std::signal(SIGABRT, signal_handler))
+  {
+    throw std::logic_error("failed to set up testing environment");
+  }
+
+  ::testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
+}
+catch(std::exception &e)
+{
+  std::cerr << e.what() << std::endl;
+  return EXIT_FAILURE;
+}
+catch(...)
+{
+  return EXIT_FAILURE;
+}
