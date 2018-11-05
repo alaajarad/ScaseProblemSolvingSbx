@@ -1,16 +1,13 @@
-make_simple_test("Problems" Subtraction test_subtraction OFF
-    ../../Problems/Subtraction/src/subtraction.cpp)
+macro(create_test_for PROBLEM_NAME)
+  make_simple_test("Problems" ${PROBLEM_NAME} test_${PROBLEM_NAME} OFF
+      ../../Problems/${PROBLEM_NAME}/src/${PROBLEM_NAME}.cpp)
 
-target_include_directories(${TESTTARGET} PUBLIC ../../Problems/Subtraction/include)
+  target_include_directories(${TESTTARGET} PUBLIC ../../Problems/${PROBLEM_NAME}/include)
 
-configure_file(../GroundTruth/subtraction.in subtraction.in COPYONLY)
-configure_file(../GroundTruth/subtraction.out subtraction.out COPYONLY)
+  configure_file(../GroundTruth/${PROBLEM_NAME}.in ${PROBLEM_NAME}.in COPYONLY)
+  configure_file(../GroundTruth/${PROBLEM_NAME}.out ${PROBLEM_NAME}.out COPYONLY)
+endmacro()
 
-make_simple_test("Problems" Gears test_gears OFF
-    ../../Problems/Gears/src/gears.cpp)
-
-target_include_directories(${TESTTARGET} PUBLIC ../../Problems/Gears/include)
-
-configure_file(../GroundTruth/gears.in gears.in COPYONLY)
-configure_file(../GroundTruth/gears.out gears.out COPYONLY)
-
+create_test_for(Sample)
+create_test_for(Subtraction)
+create_test_for(Gears)

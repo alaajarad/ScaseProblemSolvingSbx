@@ -1,4 +1,4 @@
-#include "gears.h"
+#include "sample.h"
 
 int main()
 {
