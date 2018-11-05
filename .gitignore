@@ -2,7 +2,6 @@
 build/
 deploy/
 install/
-src/
 
 #OS junk files
 [Tt]humbs.db
