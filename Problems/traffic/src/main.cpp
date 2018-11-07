@@ -6,16 +6,16 @@ using namespace std;
 int main()
 {
   // Your driver code can go here !!!
-	int t;
+	int t,x,g,y,r;
 	cin >> t;
-	int counts[100];
+	string counts[100];
         for(int i=0;i<t;i++)
         {
             cin>>x;
             cin>>g;
             cin>>y;
             cin>>r;
-            counts[i]= GetColor(x,g,y,r);
+            counts[i]= Traffic::GetColor(x,g,y,r);
         }
 	for (int i = 0;i < t;i++)
 	{

@@ -13,6 +13,7 @@ TEST(Traffic, Traffic)
   }
   int numberOfTestCases;
   inf >> numberOfTestCases;
+  double max1 =0;
   for (int i = 0; i < numberOfTestCases; i++)
   {
     int x;
@@ -28,6 +29,12 @@ TEST(Traffic, Traffic)
 
  std::string  expectedAnswer;
     outf >> expectedAnswer;
-    EXPECT_EQ(Traffic::GetColor(x,g,y,r), expectedAnswer);
+    int start = clock();
+    std :: string s =Traffic::GetColor(x,g,y,r);
+    EXPECT_STREQ(s.c_str(), expectedAnswer.c_str());
+    int stop = clock();
+    double elapsedTime = (stop-start)/double(CLOCKS_PER_SEC)*1000;
+    max1 = std::max(max1,elapsedTime);
   }
+  std::cout<<"maximum execution time "<< max1;
 }

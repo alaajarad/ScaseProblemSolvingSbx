@@ -1,17 +1,18 @@
 #include "traffic.h"
 #include<string>
+#include <iostream>
 
 
-String Traffic::GetColor(int x, int g, int y, int r)
+std::string Traffic::GetColor(int x, int g, int y, int r)
 {
   // Your code goes here !!!
-        string s= "";
-        int sum = g+y+r;
+        std::string s= "";
+        long long sum = g+y+r;
         if (x%sum < g)
-            s = "GREEN";
+            s = "green";
         if(x%sum >= g && x%sum < g+y)
-            s= "YELLOW";
+            s= "yellow";
         if(x%sum >= g+y)
-            s="RED";
+            s="red";
         return s;
 }

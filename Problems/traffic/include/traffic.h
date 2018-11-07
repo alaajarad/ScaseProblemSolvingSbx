@@ -38,13 +38,16 @@ public:
 
   /**
   *  Get the light of a traffic light after a period of time (refer to the problem statement).
-  *  \param[in] x , g,y,r the time to get to the traffic light , the period of green light, the period of the yellow light and the period of the red light respectively.
+  *  \param[in] x  the time to get to the traffic light , the period of green light.
+  *  \param[in] g the period of green light.
+  *  \param[in] y the period of the yellow light .
+  *  \param[in] r  the period of the red light.
   *  \return a string representing the light.
   */
 
   // Note: you should implement this function in the cpp file.
   // Note: you are not allowed to modify the signature of this function.
-  static string  GetColor(int x , int g , int y, int r);
+  static std::string GetColor(int x , int g , int y, int r);
 };
 
 #endif // TRAFFIC_H
