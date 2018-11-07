@@ -2,6 +2,21 @@
 
 int Subtraction::GetMaxNumber(const std::vector<int>& sequence)
 {
-  // Your code goes here !!!
-  return 0;
+	
+	if (sequence.size() >= 2)
+	{
+		int result = sequence[1];
+		for (int i = 2; i < sequence.size(); i++)
+		{
+			result -= sequence[i];
+		}
+		result = sequence[0] - (result);
+		return result;
+	}
+	else
+	{
+		return sequence[0];
+	}
+	
+	
 }
