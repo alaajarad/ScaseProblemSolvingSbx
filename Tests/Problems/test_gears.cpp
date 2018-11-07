@@ -5,6 +5,7 @@
 
 TEST(Subtraction, Subtraction)
 {
+    int max1=0;
   std::ifstream inf("gears.in");
   std::ifstream outf("gears.out");
   if (!inf.is_open() || !outf.is_open())
@@ -26,6 +27,11 @@ TEST(Subtraction, Subtraction)
     }
     int expectedAnswer;
     outf >> expectedAnswer;
+    int start = clock();
     EXPECT_EQ(Gears::GetNumberOfDistinctPairs(gears), expectedAnswer);
+    int stop = clock();
+    int elapsedTime = (stop-start)/double(CLOCKS_PER_SEC)*1000;
+    max1 = std::max(max1,elapsedTime);
   }
+  std::cout<<"maximum elapsed time is : "<< max1;
 }
