@@ -26,6 +26,12 @@ TEST(Subtraction, Subtraction)
     }
     int expectedAnswer;
     outf >> expectedAnswer;
+	
+		clock_t bgn = clock();
     EXPECT_EQ(Gears::GetNumberOfDistinctPairs(gears), expectedAnswer);
+  clock_t end = clock();
+  double elapsed_ = double(end - bgn) / CLOCKS_PER_SEC * 1000;
+  MostConsuming = std::max(MostConsuming, elapsed_);
   }
+  std::cout << "\n***The most time consuming test was: " << MostConsuming << " ms***\n\n";
 }
