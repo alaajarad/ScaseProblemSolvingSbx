@@ -30,8 +30,8 @@ TEST(Subtraction, Subtraction)
     int start= clock();
     EXPECT_EQ(Subtraction::GetMaxNumber(sequence), expectedAnswer);
     int stop = clock();
-    int elapsed = (stop-start)/double(CLOCKS-PER-SEC)*1000;
+    double elapsed = (stop-start)/double(CLOCKS_PER_SEC)*1000;
     max1 = std::max(max1,elapsed);
   }
-  std :: cout<<"max elapsed time "<< max1;
+  std :: cout<<"max elapsed time "<< max1<<std::endl;
 }

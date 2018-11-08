@@ -37,5 +37,5 @@ TEST(Traffic, Traffic)
     double elapsedTime = (stop-start)/double(CLOCKS_PER_SEC)*1000;
     max1 = std::max(max1,elapsedTime);
   }
-  std::cout<<"maximum execution time "<< max1;
+  std::cout<<"maximum execution time "<< max1 << std::endl;
 }
