@@ -2,7 +2,17 @@
 
 
 int Gears::GetNumberOfDistinctPairs(const std::vector<int>& gears)
-{
+{ 
+	 int sum = 0;
+	for (int i = 0; i<gears.size(); i++)
+	{
+		for (int j = i + 1; j < gears.size(); j++)
+		{
+			if (gears[j] % gears[i] == 0 || gears[i] % gears[j] == 0)
+				sum++;
+		}
+	}
+
   // Your code goes here !!!
-  return 0;
+	return sum;
 }
