@@ -2,7 +2,7 @@
 
 std::string TrafficLights::GetLightColor(const int driverTime, const int greenLightTime, const int yellowLightTime, const int redLightTime)
 {
-	unsigned long long int allLightsTime = greenLightTime + yellowLightTime + redLightTime;
+	unsigned int allLightsTime = greenLightTime + yellowLightTime + redLightTime;
 	int mod = driverTime % allLightsTime;
 
 	std::string colorLight;
