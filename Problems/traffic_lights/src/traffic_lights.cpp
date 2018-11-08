@@ -9,15 +9,14 @@ std::string traffic_lights::GetColor(const std::vector<int>& sequence)
 	
 	x %= sum ;
 
-	if ( x < sequence[1])
+	if (x < sequence[1])
 
 		return "green";
-
-	else if ( x <  (sequence[1] + sequence[2]))
-	return "yellow";
 	
-	else
-		return "red";
+	if ( x <  (sequence[1] + sequence[2]))
+			return "yellow";
+		else
+			return "red";
 
 		
 	
