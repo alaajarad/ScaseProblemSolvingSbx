@@ -3,7 +3,7 @@
 
 #include "gears.h"
 
-TEST(Subtraction, Subtraction)
+TEST(Gears, Gears)
 {
     double max1=0;
   std::ifstream inf("gears.in");
@@ -31,8 +31,8 @@ TEST(Subtraction, Subtraction)
      int start = clock();
     EXPECT_EQ(Gears::GetNumberOfDistinctPairs(gears), expectedAnswer);
      int stop = clock();
-     int elapsed = (stop-start)/double(CLOCKS_PER_SEC)*1000;
+  double elapsed = (stop-start)/double(CLOCKS_PER_SEC)*1000;
      max1 = std::max(elapsed,max1);
   }
-  std::cout<<"elapsed time" << max1;
+  std::cout<<"elapsed time " << max1<<std::endl;
 }
