@@ -5,7 +5,7 @@
 
 TEST(Subtraction, Subtraction)
 {
-    int max1=0;
+    double max1=0;
   std::ifstream inf("gears.in");
   std::ifstream outf("gears.out");
   if (!inf.is_open() || !outf.is_open())

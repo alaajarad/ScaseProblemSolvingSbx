@@ -5,6 +5,7 @@
 
 TEST(Traffic, Traffic)
 {
+
   std::ifstream inf("traffic.in");
   std::ifstream outf("traffic.out");
   if (!inf.is_open() || !outf.is_open())

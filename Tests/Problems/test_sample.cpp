@@ -5,7 +5,7 @@
 
 TEST(Sample, Sample)
 {
-    int max1=0;
+    double max1=0;
   std::ifstream inf("sample.in");
   std::ifstream outf("sample.out");
   if (!inf.is_open() || !outf.is_open())
@@ -26,5 +26,5 @@ TEST(Sample, Sample)
     int elapsed = (stop-start)/double(CLOCKS-PER-SEC)*1000;
     max1 = std::max(max1,elapsed);
   }
-  std::cout<<"max elapsed time"<< elapsed;
+  std::cout<<"max elapsed time"<< max1;
 }
