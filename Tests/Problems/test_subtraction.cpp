@@ -7,7 +7,6 @@ TEST(Subtraction, Subtraction)
 {
   std::ifstream inf("subtraction.in");
   std::ifstream outf("subtraction.out");
-  int max1 =0;
   if (!inf.is_open() || !outf.is_open())
   {
     FAIL() << "Error opening test file";
@@ -27,11 +26,6 @@ TEST(Subtraction, Subtraction)
     }
     int expectedAnswer;
     outf >> expectedAnswer;
-    int start = clock();
     EXPECT_EQ(Subtraction::GetMaxNumber(sequence), expectedAnswer);
-    int stop = clock();
-    int elapsedTime = (stop-start)/double(CLOCKS_PER_SEC)*1000;
-   max1 = std::max (max1,elapsedTime);
   }
-  std::cout<<"maximum elapsed time is : "<< max1;
 }
