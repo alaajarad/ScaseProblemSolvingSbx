@@ -5,6 +5,7 @@
 
 TEST(Subtraction, Subtraction)
 {
+    int max1=0;
   std::ifstream inf("gears.in");
   std::ifstream outf("gears.out");
   if (!inf.is_open() || !outf.is_open())
@@ -25,7 +26,13 @@ TEST(Subtraction, Subtraction)
       gears.push_back(teeth);
     }
     int expectedAnswer;
+
     outf >> expectedAnswer;
+     int start = clock();
     EXPECT_EQ(Gears::GetNumberOfDistinctPairs(gears), expectedAnswer);
+     int stop = clock();
+     int elapsed = (stop-start)/double(CLOCKS_PER_SEC)*1000;
+     max1 = std::max(elapsed,max1);
   }
+  std::cout<<"elapsed time" << max1;
 }
